@@ -2,7 +2,7 @@ package com.hbnu.basic;
 
 import java.util.Scanner;
 
-public class ArrayDemo1 {
+public class ArrayDemo01 {
     public static void main(String[] args) {
         //1、创建键盘输入对象
         Scanner scanner = new Scanner(System.in);
