@@ -1,3 +1,5 @@
+package com.hbnu.basic;
+
 import java.util.Scanner;
 
 public class IfElseDemo02 {

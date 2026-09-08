@@ -4,10 +4,10 @@ import java.util.Scanner;
 
 public class IfElseDemo01 {
     public static void main(String[] args) {
-        int height = 0;
-        long wealth = 0L;
+        int height;
+        long wealth;
 //        String outlook = new String(""); //字符串不好判断
-        boolean handsome = false;
+        boolean handsome;
 
         Scanner scanner = new Scanner(System.in);
         System.out.println("请输入身高：");
