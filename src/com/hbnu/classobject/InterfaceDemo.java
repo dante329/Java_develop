@@ -8,13 +8,17 @@ import java.security.Key;
  * java8：添加default默认方法（带方法体）、static静态方法
  * 类用 implements 实现接口、一个类可以同时实现多个接口（弥补java单继承的短板）
  * 接口不能new，实现类必须重写接口里面全部抽象方法
+ * 接口和接口之间可以多继承
  *
- * 设计思想：接口描述能力（能做什么），不关心是谁。比如USB设备，不管是鼠标、键盘、U盘，都要实现work()
+ * 设计思想：接口描述能力（能做什么），体现“has-a”或“can-do”关系，侧重行为规范，不关心是谁。
+ * 比如USB设备，不管是鼠标、键盘、U盘，都要实现work()
  */
 
 // 接口：USB规范，规定必须实现work方法
 interface USB {
-    //抽象方法，默认public abstract，不用谢
+    //接口变量默认修饰符为public static final，不用谢
+    int MAX = 100; //等价于 public static final int MAX = 100;
+    //抽象方法，默认public abstract，不用写
     void work();
 }
 
