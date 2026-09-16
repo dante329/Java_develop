@@ -5,7 +5,7 @@ import java.security.Key;
 /**
  * interface 定义接口，代表行为规范
  * java8以前：接口里面只能有抽象方法、常量，没有普通方法、成员变量
- * java8：添加default默认方法（带方法体）、static静态方法
+ * 重要🌟java8：添加default默认方法（实例方法，要用default关键字）、static静态方法（属于接口本身，只能用“接口名.方法名()”调用）；它们都是有方法体的。
  * 类用 implements 实现接口、一个类可以同时实现多个接口（弥补java单继承的短板）
  * 接口不能new，实现类必须重写接口里面全部抽象方法
  * 接口和接口之间可以多继承
@@ -20,6 +20,10 @@ interface USB {
     int MAX = 100; //等价于 public static final int MAX = 100;
     //抽象方法，默认public abstract，不用写
     void work();
+    //default方法（需要用实现类的对象调用）
+    default void check() {
+        System.out.println("检查成功");
+    }
 }
 
 // 鼠标实现USB interface
@@ -58,5 +62,8 @@ public class InterfaceDemo {
         plugIn(new UDisk());
 
         // USB usb = new USB(); // ❌ 接口不能直接实例化
+
+        Mouse mouse = new Mouse();
+        mouse.check(); //用实现类Mouse创建的对象调用接口中的default函数
     }
 }
